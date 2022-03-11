@@ -47,22 +47,32 @@ App({
     try {
       const cloud = await this.cloud()
       const res = await cloud.callFunction({ // 调用云函数
-        name: 'invite_server', // 应用唯一的服务函数
+        name: 'quickstartFunctions', // 应用唯一的服务函数
         data: {
           type: obj.name, // 传入name为type
           data: obj.data // 传入data为data
         }
       })
-      console.log('【云函数调用成功】', res)
-      if (res.result !== false) { // 如果返回值不为false，则证明正常访问
-        return res.result
-      } else { // 否则
-        wx.hideLoading()
-        wx.showModal({ // 提示一下
-          content: '函数服务没有支持该操作！',
-          showCancel: false
-        })
-      }
+			console.log('【云函数调用成功】', res)
+			if (res.result.name === 'invite') {
+				if (res.result.data !== false) { // 如果返回值不为false，则证明正常访问
+					return res.result.data
+				} else { // 否则
+					wx.hideLoading()
+					wx.showModal({ // 提示一下
+						content: '函数服务没有支持该操作！',
+						showCancel: false
+					})
+				}
+			} else {
+				// 不同模版的云函数服务均共享quickstartFunctions名字
+				// 如果你访问部署多个时，会出现此问题，重新部署即可
+				wx.hideLoading()
+				wx.showModal({
+					content: '云函数quickstartFunctions被其他模版覆盖，请更新上传西数后再次体验',
+					showCancel: false
+				})
+			}
     } catch (e) { // 网络问题出现
       console.error('【云函数调用失败】', e.toString())
       wx.hideLoading()

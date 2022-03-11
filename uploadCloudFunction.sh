@@ -1,1 +1,1 @@
-${installPath} cloud functions deploy --e ${envId} --n invite_server --r --project ${projectPath}
+${installPath} cloud functions deploy --e ${envId} --n quickstartFunctions --r --project ${projectPath}
