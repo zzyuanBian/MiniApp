@@ -36,7 +36,7 @@ page{
   font-family: PingFangSC-Light;
   text-align: center;
   font-size: 40rpx;
-  color: #206BED;
+  color: #f0dcd6;
   letter-spacing: 25rpx;
 }
 .top_local{
@@ -44,7 +44,7 @@ page{
   margin: 104rpx auto 0;
   width: 44rpx;
   font-size: 36rpx;
-  color: #206BED;
+  color: #f0dcd6;
   text-align: center;
 }
 .top_time{
@@ -52,21 +52,21 @@ page{
   height: 25px;
   font-family: PingFangSC-Light;
   font-size: 36rpx;
-  color: #206BED;
+  color: #f0dcd6;
   text-align: center;
 }
 .top_hold{
   margin: auto auto 82rpx;
   font-family: PingFangSC-Regular;
   font-size: 32rpx;
-  color: #206BED;
+  color: #f0dcd6;
   letter-spacing: -0.8rpx;
   text-align: center;
 }
 .no_tips{
   font-family: PingFangSC-Regular;
   font-size: 30px;
-  color: #206BED;
+  color: #f0dcd6;
   text-align: center;
   margin: auto;
 }
@@ -74,7 +74,7 @@ page{
   margin: 206rpx 88rpx 0;
   font-family: TencentSansW7;
   font-size: 80rpx;
-  color: #206BED;
+  color: #f0dcd6;
   letter-spacing: 0;
   text-align: justify;
 }
@@ -82,7 +82,7 @@ page{
   margin: 8rpx 88rpx 0;
   font-family: TencentSansW3;
   font-size: 32rpx;
-  color: #206BED;
+  color: #f0dcd6;
   letter-spacing: 0;
   text-align: justify;
 }
@@ -90,14 +90,14 @@ page{
   margin: 60rpx 88rpx 0;
   font-family: PingFangSC-Medium;
   font-size: 32rpx;
-  color: #206BED;
+  color: #f0dcd6;
   text-align: justify;
 }
 .invite_text{
   margin: 34rpx 88rpx 0;
   font-family: PingFangSC-Light;
   font-size: 28rpx;
-  color: #206BED;
+  color: #f0dcd6;
   line-height: 48rpx;
 }
 .metting_model{
@@ -107,7 +107,7 @@ page{
   padding: 80rpx 0;
 }
 .metting_model .line{
-  background: linear-gradient(#d0ddfe, #206BED, #d0ddfe);
+  background: linear-gradient(#f0dcd6, #da5858, #f0dcd6);
   width: 2rpx;
   height: 100%;
   position: absolute;
@@ -126,7 +126,7 @@ page{
   width: 50%;
   font-family: PingFangSC-Medium;
   font-size: 32rpx;
-  color: #206BED;
+  color: #f0dcd6;
   text-align: center;
   line-height: 44rpx;
   padding: 0 20rpx;
@@ -138,7 +138,7 @@ page{
   width: 24rpx;
   height: 24rpx;
   transform: rotate(-315deg);
-  background: #206BED;
+  background: #f0dcd6;
 }
 .map{
   margin:80rpx 88rpx 0;
@@ -161,7 +161,7 @@ page{
   margin-left: 70rpx;
   font-family: PingFangSC-Regular;
   font-size: 28rpx;
-  color: #206BED;
+  color: #f0dcd6;
   line-height: 44rpx;
 }
 .form{
@@ -173,19 +173,19 @@ page{
 .form_item view{
   font-family: PingFangSC-Regular;
   font-size: 32rpx;
-  color: #206BED;
+  color: #f0dcd6;
 }
 .form_item input{
   border: 1px solid #99C0FF;
   font-family: PingFangSC-Regular;
   font-size: 32rpx;
-  color: #206BED;
+  color: #f0dcd6;
   padding: 18rpx 20rpx;
   margin-top: 16rpx;
 }
 .form_item .place{
   opacity: 0.4;
-  color: #206BED;
+  color: #f0dcd6;
 }
 .form button{
   height: 80rpx;
@@ -212,14 +212,14 @@ page{
   margin-top: 110rpx;
   font-family: PingFangSC-Medium;
   font-size: 32rpx;
-  color: #206BED;
+  color: #f0dcd6;
   text-align: center;
 }
 .review .des{
   margin-top: 10rpx;
   font-family: PingFangSC-Regular;
   font-size: 24rpx;
-  color: #206BED;
+  color: #f0dcd6;
   text-align: center;
   line-height: 36rpx;
 }

@@ -47,8 +47,8 @@
 		"useStaticServer": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.19.1",
-	"appid": "",
+	"libVersion": "latest",
+	"appid": "wx4e72ee4034f210e4",
 	"projectname": "%E9%82%80%E8%AF%B7%E5%87%BD",
 	"condition": {},
 	"srcMiniprogramRoot": "miniprogram/",
