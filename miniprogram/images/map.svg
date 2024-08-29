@@ -1,7 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="design-iconfont">
   <defs>
     <filter color-interpolation-filters="auto" id="w8ug6lz0va">
-      <feColorMatrix in="SourceGraphic" values="0 0 0 0 0.125490 0 0 0 0 0.419608 0 0 0 0 0.929412 0 0 0 1.000000 0"/>
+      <feColorMatrix in="SourceGraphic" values="
+      0 0 0 0 0.941176
+      0 0 0 0 0.862745
+      0 0 0 0 0.839215
+      0 0 0 1.000000 0"/>
     </filter>
   </defs>
   <g filter="url(#w8ug6lz0va)" fill="none" fill-rule="evenodd">

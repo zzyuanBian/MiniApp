@@ -76,10 +76,10 @@ App({
     } catch (e) { // 网络问题出现
       console.error('【云函数调用失败】', e.toString())
       wx.hideLoading()
-      wx.showModal({
-        content: '请上传cloudfunctions文件夹中的云函数，然后再次体验', // 此提示可以在正式时改为 "网络服务异常，请确认网络重新尝试！"
-        showCancel: false
-      })
+      // wx.showModal({
+      //   content: '请上传cloudfunctions文件夹中的云函数，然后再次体验', // 此提示可以在正式时改为 "网络服务异常，请确认网络重新尝试！"
+      //   showCancel: false
+      // })
     }
   }
 })

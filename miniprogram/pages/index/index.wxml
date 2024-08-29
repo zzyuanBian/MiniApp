@@ -4,7 +4,8 @@
 </view>
 <view bindtouchstart="movepage" bindtouchend="movepage" class="container" wx:else>
   <view class="model" wx:if="{{spage==0||epage==0}}">
-    <image src="../../images/top_s.png" mode="aspectFit"></image>
+    <!-- <image src="../../images/main_s.png"></image> -->
+    <image src="../../images/top_s.png" mode="widthFix"></image>
     <view class="top_black"></view>
     <!-- <view class="top_title">{{info.start.title}}</view>
     <view class="top_local">{{info.start.local}}</view>
@@ -12,11 +13,11 @@
     <view class="top_hold">{{info.start.hold}}</view> -->
   </view>
   <view class="model {{spage!=1?(spage<epage?'model_show':''):(spage<epage?'':'model_hide')}}" wx:if="{{spage==1||epage==1}}">
-    <image src="../../images/main_s.png"></image>
-    <view class="main_title">诚挚邀请</view>
+    <image src="../../images/image_1.png" mode="widthFix"></image>
+    <!-- <view class="main_title">诚挚邀请</view>
     <view class="main_entil">INVITATIONLETTER</view>
     <view class="invite_title">{{info.invite.title}}</view>
-    <view class="invite_text">{{info.invite.text}}</view>
+    <view class="invite_text">{{info.invite.text}}</view> -->
   </view>
   <view class="model {{spage!=2?(spage<epage?'model_show':''):(spage<epage?'':'model_hide')}}" wx:if="{{spage==2||epage==2}}">
     <image src="../../images/main_s.png"></image>
@@ -35,36 +36,40 @@
     <image src="../../images/main_s.png"></image>
     <view class="main_title">活动地址</view>
     <view class="main_entil">ADDRESS</view>
-    <map class="map" latitude="{{info.address.point[0]}}" longitude="{{info.address.point[1]}}" enable-3D="true" enable-building="true" markers="{{[info.address.marker]}}" show-location="true" catchregionchange="changeno"></map>
+    <map class="map" latitude="{{info.address1.point[0]}}" longitude="{{info.address1.point[1]}}" enable-3D="true" enable-building="true" markers="{{[info.address1.marker]}}" show-location="true" catchregionchange="changeno"></map>
     <view class="map_line"></view>
     <view class="address_item">
       <image src="../../images/map.svg"></image>
-      <view>{{info.address.local}}</view>
+      <view>{{info.address1.local}}</view>
     </view>
     <view class="address_item">
       <image src="../../images/time.svg"></image>
-      <view>{{info.address.time}}</view>
+      <view>{{info.address1.time}}</view>
     </view>
     <view class="address_item">
       <image src="../../images/tel.svg"></image>
-      <view>{{info.address.tel}}</view>
+      <view>{{info.address1.tel}}</view>
     </view>
   </view>
   <view class="model {{spage!=4?(spage<epage?'model_show':''):(spage<epage?'':'model_hide')}}" wx:if="{{spage==4||epage==4}}">
     <image src="../../images/main_s.png"></image>
-    <view class="main_title">活动报名</view>
-    <view class="main_entil">REGISTRATION</view>
-    <view class="form" bindtouchstart="changeno" bindtouchend="changeno" wx:if="{{status==0}}">
-      <view class="form_item" wx:for="{{info.form}}" wx:key="index">
-        <view>{{item.name}}</view>
-        <input bindinput="oninput" data-key="{{index}}" placeholder="{{item.place}}" placeholder-class="place" cursor-spacing="20"/>
-      </view>
-      <button bindtap="submit">提交</button>
+    <view class="main_title">住宿地址</view>
+    <view class="main_entil">Have a Rest</view>
+    <map class="map" latitude="{{info.address2.point[0]}}" longitude="{{info.address2.point[1]}}" enable-3D="true" enable-building="true" markers="{{[info.address2.marker]}}" show-location="true" catchregionchange="changeno"></map>
+    <view class="map_line"></view>
+    <view class="address_item">
+      <image src="../../images/map.svg"></image>
+      <view bind:tap="getLocation1">{{info.address2.local}}</view>
     </view>
-    <view class="review">
-      <image src="{{info.review[status].image}}"></image>
-      <view class="title">{{info.review[status].title}}</view>
-      <view class="des">{{info.review[status].des}}</view>
+    <view class="address_item">
+      <image src="../../images/time.svg"></image>
+      <view>
+        <text decode="{{true}}">9月30日 - 10月2日\n *最早入住时间：9月30日14:00以后\n *最晚离店时间：10月2日12:00以前</text>
+      </view>
+    </view>
+    <view class="address_item">
+      <image src="../../images/tel.svg"></image>
+      <view>{{info.address2.tel}}</view>
     </view>
   </view>
 </view>

@@ -39,7 +39,7 @@ Page({
         time: '11:10-11:30',
         text: '合影留念'
       }],
-      address: {
+      address1: {
         point: [30.583448, 104.158269], // 地图展示的中心点
         marker: { // 地图当前标记点
           id: 0, // 标记点ID，不用变更
@@ -51,38 +51,22 @@ Page({
         },
         local: '白泽·white palace（三圣乡店）', // 地址
         time: '2024年10月1日', // 举办时间
-        tel: '173-8062-1168' // 联系电话
+        tel: '173 8062 1168' // 联系电话
       },
-      review: { // 审核信息
-        2: { // 报名成功信息
-          image: '../../images/success.svg',
-          title: '报名成功',
-          des: '云开发发布会期待您的到来'
+
+      address2: {
+        point: [30.582632, 104.160859], // 地图展示的中心点
+        marker: { // 地图当前标记点
+          id: 0, // 标记点ID，不用变更
+          latitude: 30.582632, // 标记点所在纬度
+          longitude: 104.160859, // 标记点所在经度
+          iconPath: '../../images/success.svg', // 标记点图标，png或jpg类型
+          width: '40', // 标记点图标宽度
+          height: '48' // 标记点图标高度
         },
-        1: { // 审核中信息
-          image: '../../images/review.svg',
-          title: '审核中',
-          des: '报名信息正在审核中'
-        }
+        local: '成都开心木屋住宿', // 地址
+        tel: '182 0812 3396' // 联系电话
       },
-      form: { // 报名填写项
-        name: {
-          name: '姓名',
-          place: '请填写您的姓名'
-        },
-        tel: {
-          name: '手机',
-          place: '请填写您的手机号码'
-        },
-        people: {
-          name: '参与人数',
-          place: '请填写参会人数'
-        },
-        retext: {
-          name: '备注',
-          place: '请填写备注'
-        }
-      }
     }
   },
   /**
@@ -144,44 +128,16 @@ Page({
       }
     }
   },
-  /**
-   * 更新输入框输入值
-   * @param {*} e 页面信息
-   */
-  oninput (e) {
-    const key = `form.${e.currentTarget.dataset.key}` // 将key值带入，生成改变路径
-    that.setData({ // 更改对应路径为输入信息
-      [key]: e.detail.value
-    })
-  },
-  /**
-   * 提交报名
-   */
-  async submit () {
-    let flag = true // 先设置flag为true，用于检查
-    const check = that.data.info.form // 取出form原始结构
-    const form = that.data.form // 取出输入的
-    for (const i in check) { // 对原始结构进行循环
-      if (form[i] == null || form[i] === '') { // 如果原始需要填写的没有写
-        wx.showModal({ // 提示要补充
-          content: `${check[i].name}未填写，请补充！`,
-          showCancel: false
-        })
-        flag = false // 设置false，跳过提交环节
-        break // 退出for循环
-      }
-    }
-    if (flag === true) { // 如果flag=true，证明验证通过
-      wx.showLoading({ // 显示加载中
-        title: '提交中',
-        mask: true
-      })
-      await app.call({ // 发起云函数，提交信息
-        name: 'add',
-        data: form
-      })
-      await that.init() // 更新信息
-      wx.hideLoading() // 隐藏加载中
-    }
-  }
+
+  getLocation1(e) {
+    console.log("call getLocation1");
+    wx.openLocation({
+        latitude: this.data.info.address2.latitude, //要去的纬度-地址
+        longitude: this.data.info.address2.longitude, //要去的经度-地址/ 
+        scale: this.data.info.address2.scale, // 缩放比例
+        name: this.data.info.address2.name,//终点名称
+        address: this.data.info.address2.address,//终点详细地址
+      });
+      console.log("end openLocation");
+    },
 })
