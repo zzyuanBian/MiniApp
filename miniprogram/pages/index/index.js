@@ -17,27 +17,21 @@ Page({
         title: '尊敬的朋友：', // 邀请对象
         text: '一年一度的小程序云开发技术峰会即将于2020年11月29日在北京隆重举行。回顾这一年，云开发继续深化丰富基础能力，提供高可用、自动弹性扩缩的后端云服务，包含计算、存储、托管等 serverless 化能力，为广大小程序开发者切实降低开发门槛与实现成本，并且新增支持环境共享、公众号云开发、静态网站、云托管、微信支付等多项重磅新能力。特邀请你参与此次峰会，共同探讨云开发的发展策略，共同进步！'
       },
-      meeting: [{ // 会议流程
-        time: '9:00-9:30',
-        text: '嘉宾入场签到'
+      meeting: [{ // 活动流程
+        time: '12:00-13:00',
+        text: '柴火鸡'
       }, {
-        time: '9:30-9:50',
-        text: '云赋能，新开发'
+        time: '13:30-14:00',
+        text: '合影+敬茶'
       }, {
-        time: '9:50-10:10',
-        text: '云时代前端开发的边界拓展'
+        time: '14:00-14:15',
+        text: '到婚宴地点'
       }, {
-        time: '10:10-10:30',
-        text: '茶歇'
+        time: '15:30 - 17:50',
+        text: '游园会'
       }, {
-        time: '10:30-10:50',
-        text: '重新定义开发'
-      }, {
-        time: '10:50-11:10',
-        text: '不止小程序，云开发的多场景应用'
-      }, {
-        time: '11:10-11:30',
-        text: '合影留念'
+        time: '17:50 - 20:00',
+        text: '婚宴'
       }],
       address1: {
         point: [30.583448, 104.158269], // 地图展示的中心点
@@ -49,7 +43,7 @@ Page({
           width: '40', // 标记点图标宽度
           height: '48' // 标记点图标高度
         },
-        local: '白泽·white palace（三圣乡店）', // 地址
+        local: '白泽·white palace 三圣乡店', // 地址
         time: '2024年10月1日', // 举办时间
         tel: '173 8062 1168' // 联系电话
       },
@@ -65,7 +59,7 @@ Page({
           height: '48' // 标记点图标高度
         },
         local: '成都开心木屋住宿', // 地址
-        tel: '182 0812 3396' // 联系电话
+        tel: '131 9815 2761' // 联系电话
       },
     }
   },
@@ -128,16 +122,54 @@ Page({
       }
     }
   },
-
+  /**
+   * 导航白泽
+   * @param {*} e 页面信息
+   */
   getLocation1(e) {
-    console.log("call getLocation1");
     wx.openLocation({
-        latitude: this.data.info.address2.latitude, //要去的纬度-地址
-        longitude: this.data.info.address2.longitude, //要去的经度-地址/ 
-        scale: this.data.info.address2.scale, // 缩放比例
-        name: this.data.info.address2.name,//终点名称
-        address: this.data.info.address2.address,//终点详细地址
+      latitude: 30.582632, // 标记点所在纬度
+      longitude: 104.160859, // 标记点所在经度
+      name: '白泽·white palace 三圣乡店', // 地点名称
+      address: '锦江区银杏树水岸花苑旁', // 地址的详细说明
+      scale: 18, // 缩放比例
+      success: function(res) {
+         console.log('打开地图成功');
+      },
+      fail: function(err) {
+         console.log('打开地图失败', err);
+      }
+   });
+  },
+  /**
+   * 导航住宿
+   * @param {*} e 页面信息
+   */
+  getLocation2(e) {
+    wx.openLocation({
+      latitude: 30.582632, // 标记点所在纬度
+      longitude: 104.160859, // 标记点所在经度
+      name: '成都开心木屋住宿', // 地点名称
+      address: '锦江区三圣乡红砂村一组', // 地址的详细说明
+      scale: 18, // 缩放比例
+      success: function(res) {
+         console.log('打开地图成功');
+      },
+      fail: function(err) {
+         console.log('打开地图失败', err);
+      }
+   });
+  },
+
+    call_1(e) {
+      wx.makePhoneCall({
+        phoneNumber: '17380621168',
       });
-      console.log("end openLocation");
     },
+
+    call_2(e) {
+      wx.makePhoneCall({
+        phoneNumber: '13198152761',
+      });
+    }
 })

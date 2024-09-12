@@ -34,13 +34,14 @@
   </view>
   <view class="model {{spage!=3?(spage<epage?'model_show':''):(spage<epage?'':'model_hide')}}" wx:if="{{spage==3||epage==3}}">
     <image src="../../images/main_s.png"></image>
-    <view class="main_title">活动地址</view>
+    <view class="main_title">宴会地点</view>
     <view class="main_entil">ADDRESS</view>
     <map class="map" latitude="{{info.address1.point[0]}}" longitude="{{info.address1.point[1]}}" enable-3D="true" enable-building="true" markers="{{[info.address1.marker]}}" show-location="true" catchregionchange="changeno"></map>
     <view class="map_line"></view>
     <view class="address_item">
       <image src="../../images/map.svg"></image>
-      <view>{{info.address1.local}}</view>
+      <view class="location" bind:tap="getLocation1">{{info.address1.local}}</view>
+      <text class="tips">↑↑点击我导航↑↑</text>
     </view>
     <view class="address_item">
       <image src="../../images/time.svg"></image>
@@ -48,7 +49,8 @@
     </view>
     <view class="address_item">
       <image src="../../images/tel.svg"></image>
-      <view>{{info.address1.tel}}</view>
+      <view bind:tap="call_1">{{info.address1.tel}}</view>
+      <text class="tips">↑点我呼叫↑</text>
     </view>
   </view>
   <view class="model {{spage!=4?(spage<epage?'model_show':''):(spage<epage?'':'model_hide')}}" wx:if="{{spage==4||epage==4}}">
@@ -59,7 +61,8 @@
     <view class="map_line"></view>
     <view class="address_item">
       <image src="../../images/map.svg"></image>
-      <view bind:tap="getLocation1">{{info.address2.local}}</view>
+      <view class="location" bind:tap="getLocation2">{{info.address2.local}}</view>
+      <text class="tips">↑↑点击我导航↑↑</text>
     </view>
     <view class="address_item">
       <image src="../../images/time.svg"></image>
@@ -69,7 +72,8 @@
     </view>
     <view class="address_item">
       <image src="../../images/tel.svg"></image>
-      <view>{{info.address2.tel}}</view>
+      <view bind:tap="call_2">{{info.address2.tel}}</view>
+      <text class="tips">↑点我呼叫↑</text>
     </view>
   </view>
 </view>

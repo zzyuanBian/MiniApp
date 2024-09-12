@@ -164,64 +164,19 @@ page{
   color: #f0dcd6;
   line-height: 44rpx;
 }
-.form{
-  margin: 80rpx 88rpx 0;
-}
-.form_item{
-  margin-bottom: 48rpx;
-}
-.form_item view{
+.address_item .location{
+  margin-left: 70rpx;
   font-family: PingFangSC-Regular;
-  font-size: 32rpx;
+  font-size: 38rpx;
   color: #f0dcd6;
+  line-height: 44rpx;
 }
-.form_item input{
-  border: 1px solid #99C0FF;
+.address_item .tips{
+  margin-left: 80rpx;
   font-family: PingFangSC-Regular;
-  font-size: 32rpx;
-  color: #f0dcd6;
-  padding: 18rpx 20rpx;
-  margin-top: 16rpx;
-}
-.form_item .place{
-  opacity: 0.4;
-  color: #f0dcd6;
-}
-.form button{
-  height: 80rpx;
-  border-radius: 0rpx;
-  min-width: 100%;
-  background-image: linear-gradient(270deg, #2262E6 0%, #0DC7CE 100%);
-  font-family: PingFangSC-Regular;
-  font-size: 32rpx;
-  color: #FFFFFF;
-  line-height: 48rpx;
-  margin-top: 120rpx;
-}
-.review{
-  margin: 200rpx 88rpx 0;
-  display: flex;
-  flex-direction: column;
-}
-.review image{
-  width: 80rpx;
-  height: 80rpx;
-  left: calc(50% - 40rpx);
-}
-.review .title{
-  margin-top: 110rpx;
-  font-family: PingFangSC-Medium;
-  font-size: 32rpx;
-  color: #f0dcd6;
-  text-align: center;
-}
-.review .des{
-  margin-top: 10rpx;
-  font-family: PingFangSC-Regular;
-  font-size: 24rpx;
-  color: #f0dcd6;
-  text-align: center;
-  line-height: 36rpx;
+  font-size: 30rpx;
+  color: #bedf08;
+  line-height: 44rpx;
 }
 
 @-webkit-keyframes slide-top {
