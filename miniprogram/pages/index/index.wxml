@@ -13,16 +13,11 @@
     <view class="top_hold">{{info.start.hold}}</view> -->
   </view>
   <view class="model {{spage!=1?(spage<epage?'model_show':''):(spage<epage?'':'model_hide')}}" wx:if="{{spage==1||epage==1}}">
-    <image src="../../images/image_1.png" mode="widthFix"></image>
-    <!-- <view class="main_title">诚挚邀请</view>
-    <view class="main_entil">INVITATIONLETTER</view>
-    <view class="invite_title">{{info.invite.title}}</view>
-    <view class="invite_text">{{info.invite.text}}</view> -->
+    <image class="invitation_card" src="../../images/image_1.png" mode="widthFix"></image>
   </view>
   <view class="model {{spage!=2?(spage<epage?'model_show':''):(spage<epage?'':'model_hide')}}" wx:if="{{spage==2||epage==2}}">
     <image src="../../images/main_s.png"></image>
-    <view class="main_title">会议流程</view>
-    <view class="main_entil">MEETINGFLOW</view>
+    <view class="main_title">行程安排</view>
     <view class="metting_model">
       <view class="line"></view>
       <view class="item" wx:for="{{info.meeting}}" wx:key="index">

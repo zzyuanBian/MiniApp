@@ -110,8 +110,11 @@ Page({
       let { epage } = that.data // 获取data中的结束页
       const spage = that.data.epage // 将结束页传给开始页，要从这里动作
       if (that.startmove > clientY) { // 如果触摸点比初次高
-        if (epage < 4) epage++ // 在结束页小于4时加1，因为一共就4页
+        if (epage < 4) epage++ // 在结束页小于4时加1，因为一共就5页 [0, 1, 2, 3, 4]
       } else if (that.startmove < clientY) { // 如果触摸点比初次低
+
+        if (epage === 2) epage = 0; 
+
         if (epage > 0) epage-- // 在结束页大于0时减1
       }
       if (spage !== epage) { // 如果初始页和结束页相同，则证明翻到底了，不同才要改变
