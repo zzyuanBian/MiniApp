@@ -5,7 +5,12 @@
 	"window": {
 		"navigationBarTextStyle": "black",
 		"navigationStyle": "custom"
-	},
+  },
+  "resources": {
+    "mp3": [
+      { "name": "music", "path": "/resources/music.mp3" }
+    ]
+  },
 	"style": "v2",
 	"sitemapLocation": "sitemap.json"
 }

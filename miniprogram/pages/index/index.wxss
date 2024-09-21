@@ -31,8 +31,7 @@ page{
 }
 .model .invitation_card{
   position: absolute;
-  width: 50%;
-  height: 50%;
+  width: 100%;
   z-index: -1;
 }
 .top_black{
