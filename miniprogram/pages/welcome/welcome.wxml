@@ -1,0 +1,16 @@
+<view class="model" wx:if="{{noserver}}">
+  <image src="../../images/main_s.png"></image>
+  <view class="no_tips">当前小程序无法支持宽屏设备，非常抱歉！</view>
+</view>
+<view bindtouchstart="movepage" bindtouchend="movepage" class="container" wx:else>
+  <view class="model">
+    <image src="http://ski1mwock.hn-bkt.clouddn.com/top_s.png" mode="widthFix"></image>
+    <view wx:if="{{!isOpened}}">
+      <image class="invite_cover" src="http://ski1mwock.hn-bkt.clouddn.com/welcome.png" mode="widthFix" bindanimationend="onCoverAnimationEnd"></image>
+      <view wx:if="{{coverAnimationEnd}}" class="click_hint" bind:tap="doOpenCard">打开请柬</view>
+    </view>
+  </view>
+  <view class="model {{'model_show'}}" wx:if="{{isOpened}}">
+    <image class=" {{runAnimator ? 'invitation_card' : 'invitation_card_open'}}" src="http://ski1mwock.hn-bkt.clouddn.com/image_1.png" mode="aspectFit" bind:tap="click_invitation_card" bindanimationend="onAnimationEnd"></image>>
+  </view>
+</view>

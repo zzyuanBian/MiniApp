@@ -1,16 +1,24 @@
 {
 	"pages": [
-		"pages/index/index"
+    "pages/main/main",
+    "pages/welcome/welcome"
 	],
 	"window": {
 		"navigationBarTextStyle": "black",
 		"navigationStyle": "custom"
-  },
-  "resources": {
-    "mp3": [
-      { "name": "music", "path": "/resources/music.mp3" }
-    ]
-  },
+	},
+	"resources": {
+		"mp3": [
+			{
+				"name": "sound.mp3",
+				"path": "/music/sound.mp3"
+			}
+		]
+	},
+	"globalData": {
+		"musicSrc": "/resources/sound.mp3"
+	},
 	"style": "v2",
-	"sitemapLocation": "sitemap.json"
+	"sitemapLocation": "sitemap.json",
+	"lazyCodeLoading": "requiredComponents"
 }

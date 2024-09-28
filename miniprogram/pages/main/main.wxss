@@ -1,12 +1,21 @@
-page{
-  height: 100%;
-  width: 100%;
-  background-color: #610f0e;
-}
-.container{
+/* pages/main.wxss */
+.container {
+  position: absolute;
   width: 100%;
   height: 100%;
+  background-color: #6D1E18;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  z-index: -3;
 }
+
+.container image {
+  position: absolute;
+  width: 100%;
+  z-index: -2;
+}
+
 .model {
   position: absolute;
   width: 100%;
@@ -14,29 +23,85 @@ page{
   display: flex;
   flex-direction: column;
   margin: 0 auto;
+  background-color: #610f0e;
+  z-index: 1;
 }
-.model_show {
-  -webkit-animation: slide-top 0.5s ease-out both;
-	animation: slide-top 0.5s ease-out both;
-}
-.model_hide {
-  -webkit-animation: slide-bottom 0.5s ease-out both;
-  animation: slide-bottom 0.5s ease-out both;
-}
-.model image{
+
+.buttons {
   position: absolute;
+  flex-direction: column;
+  margin:auto;
+  bottom: 5%;
+  width: 40%;
+  left: 30%;
+}
+
+.buttons button {
+  position: relative;
+  background-color: grey;
   width: 100%;
+  margin-bottom: 15rpx;
+  border-radius: 20rpx;
+  background-color:rgb(204, 180, 180) ;
+  font-family: SimSun;
+}
+
+.buttons .button_1{
+  
+}
+.buttons .button_2{
+  
+}
+.buttons .button_3{
+  
+}
+.buttons .button_4{
+ 
+}
+.buttons .button_5{
+
+}
+.metting_model{
+  position: relative;
+  margin: 50rpx 88rpx 0;
+  min-height: 100rpx;
+  padding: 80rpx 0;
+}
+.metting_model .line{
+  background: linear-gradient(#f0dcd6, #da5858, #f0dcd6);
+  width: 2rpx;
   height: 100%;
-  z-index: -1;
-}
-.model .invitation_card{
   position: absolute;
-  width: 100%;
+  left: calc(50% - 1rpx);
+  top: 0rpx;
   z-index: -1;
 }
-.top_black{
-  height: 31%;
+
+.metting_model .item{
+  position: relative;
+  width: 100%;
+  display: flex;
+  margin: 40rpx 0;
 }
+.metting_model .item .item_text{
+  width: 50%;
+  font-family: PingFangSC-Medium;
+  font-size: 32rpx;
+  color: #f0dcd6;
+  text-align: center;
+  line-height: 44rpx;
+  padding: 0 20rpx;
+}
+.metting_model .item image{
+  position: absolute;
+  left: calc(50% - 12rpx);
+  top: 10rpx;
+  width: 24rpx;
+  height: 24rpx;
+  transform: rotate(-315deg);
+  background: #f0dcd6;
+}
+
 .top_title{
   font-family: PingFangSC-Light;
   text-align: center;
@@ -105,46 +170,6 @@ page{
   color: #f0dcd6;
   line-height: 48rpx;
 }
-.metting_model{
-  position: relative;
-  margin: 50rpx 88rpx 0;
-  min-height: 100rpx;
-  padding: 80rpx 0;
-}
-.metting_model .line{
-  background: linear-gradient(#f0dcd6, #da5858, #f0dcd6);
-  width: 2rpx;
-  height: 100%;
-  position: absolute;
-  left: calc(50% - 1rpx);
-  top: 0rpx;
-  z-index: -1;
-}
-
-.metting_model .item{
-  position: relative;
-  width: 100%;
-  display: flex;
-  margin: 40rpx 0;
-}
-.metting_model .item .item_text{
-  width: 50%;
-  font-family: PingFangSC-Medium;
-  font-size: 32rpx;
-  color: #f0dcd6;
-  text-align: center;
-  line-height: 44rpx;
-  padding: 0 20rpx;
-}
-.metting_model .item image{
-  position: absolute;
-  left: calc(50% - 12rpx);
-  top: 10rpx;
-  width: 24rpx;
-  height: 24rpx;
-  transform: rotate(-315deg);
-  background: #f0dcd6;
-}
 .map{
   margin:80rpx 88rpx 0;
   width: 574rpx;
@@ -182,45 +207,4 @@ page{
   font-size: 30rpx;
   color: #bedf08;
   line-height: 44rpx;
-}
-
-@-webkit-keyframes slide-top {
-  0% {
-    -webkit-transform: translateY(100%);
-            transform: translateY(100%);
-  }
-  100% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-  }
-}
-@keyframes slide-top {
-  0% {
-    -webkit-transform: translateY(100%);
-            transform: translateY(100%);
-  }
-  100% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-  }
-}
-@-webkit-keyframes slide-bottom {
-  0% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-  }
-  100% {
-    -webkit-transform: translateY(100%);
-            transform: translateY(100%);
-  }
-}
-@keyframes slide-bottom {
-  0% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-  }
-  100% {
-    -webkit-transform: translateY(100%);
-            transform: translateY(100%);
-  }
 }

@@ -1,22 +1,15 @@
-<view class="model" wx:if="{{noserver}}">
-  <image src="../../images/main_s.png"></image>
-  <view class="no_tips">当前小程序无法支持宽屏设备，非常抱歉！</view>
-</view>
-<view bindtouchstart="movepage" bindtouchend="movepage" class="container" wx:else>
-  <view class="model" wx:if="{{spage==0||epage==0}}">
-    <!-- <image src="../../images/main_s.png"></image> -->
-    <image src="../../images/top_s.png" mode="widthFix"></image>
-    <view class="top_black"></view>
-    <!-- <view class="top_title">{{info.start.title}}</view>
-    <view class="top_local">{{info.start.local}}</view>
-    <view class="top_time">{{info.start.time}}</view>
-    <view class="top_hold">{{info.start.hold}}</view> -->
+<View class="container">
+  <image src="http://ski1mwock.hn-bkt.clouddn.com/main_pic.png-main.webp" mode="widthFix"></image>
+  <view class="buttons">
+    <button class="button_1" bind:tap="onClickSchedule">日程安排</button>
+    <button class="button_2" bind:tap="onClickRest">住宿地址</button>
+    <button class="button_3" bind:tap="onClikBanquet">婚宴地址</button>
+    <button class="button_4" bind:tap="onClickGames">游戏介绍</button>
+    <button class="button_5" bind:tap="onClcikChengdu">游玩攻略</button>
   </view>
-  <view class="model {{spage!=1?(spage<epage?'model_show':''):(spage<epage?'':'model_hide')}}" wx:if="{{spage==1||epage==1}}">
-    <image class="invitation_card" src="../../images/image_1.png" mode="aspectFit"></image>
-  </view>
-  <view class="model {{spage!=2?(spage<epage?'model_show':''):(spage<epage?'':'model_hide')}}" wx:if="{{spage==2||epage==2}}">
-    <image src="../../images/main_s.png"></image>
+</View>
+
+<view class="model" wx:if="{{schedule}}">
     <view class="main_title">10月1日行程</view>
     <view class="metting_model">
       <view class="line"></view>
@@ -27,7 +20,8 @@
       </view>
     </view>
   </view>
-  <view class="model {{spage!=3?(spage<epage?'model_show':''):(spage<epage?'':'model_hide')}}" wx:if="{{spage==3||epage==3}}">
+
+  <view class="model" wx:if="{{location_banquet}}">
     <image src="../../images/main_s.png"></image>
     <view class="main_title">宴会地点</view>
     <view class="main_entil">ADDRESS</view>
@@ -36,7 +30,7 @@
     <view class="address_item">
       <image src="../../images/map.svg"></image>
       <view class="location" bind:tap="getLocation1">{{info.address1.local}}</view>
-      <text class="tips">↑↑点击我导航↑↑</text>
+      <text class="tips" bind:tap="getLocation1">↑↑点击我导航↑↑</text>
     </view>
     <view class="address_item">
       <image src="../../images/time.svg"></image>
@@ -45,10 +39,11 @@
     <view class="address_item">
       <image src="../../images/tel.svg"></image>
       <view bind:tap="call_1">{{info.address1.tel}}</view>
-      <text class="tips">↑点我呼叫↑</text>
+      <text class="tips" bind:tap="call_1">↑点我呼叫↑</text>
     </view>
   </view>
-  <view class="model {{spage!=4?(spage<epage?'model_show':''):(spage<epage?'':'model_hide')}}" wx:if="{{spage==4||epage==4}}">
+
+  <view class="model" wx:if="{{location_rest}}">
     <image src="../../images/main_s.png"></image>
     <view class="main_title">住宿地址</view>
     <view class="main_entil">Have a Rest</view>
@@ -57,7 +52,7 @@
     <view class="address_item">
       <image src="../../images/map.svg"></image>
       <view class="location" bind:tap="getLocation2">{{info.address2.local}}</view>
-      <text class="tips">↑↑点击我导航↑↑</text>
+      <text class="tips" bind:tap="getLocation2">↑↑点击我导航↑↑</text>
     </view>
     <view class="address_item">
       <image src="../../images/time.svg"></image>
@@ -68,7 +63,6 @@
     <view class="address_item">
       <image src="../../images/tel.svg"></image>
       <view bind:tap="call_2">{{info.address2.tel}}</view>
-      <text class="tips">↑点我呼叫↑</text>
+      <text class="tips" bind:tap="call_2">↑点我呼叫↑</text>
     </view>
   </view>
-</view>
